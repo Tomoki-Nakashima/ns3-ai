@@ -10,6 +10,7 @@ from py_interface import *
 from ctypes import *
 import sys
 
+
 tf.random.set_seed(0)
 np.random.seed(0)
 
@@ -39,7 +40,6 @@ class sInfo(Structure):
         ('channelNum', c_uint32),
     ]
 
-
 exp = Experiment(1234, 4096, 'interference-pattern', '../../')
 var = Ns3AIRL(2333, sEnv, sAct, sInfo)
 
@@ -49,7 +49,7 @@ model.compile(optimizer='adam',
               loss='mean_squared_error',
               metrics=['accuracy'])
 
-total_episodes = 50
+total_episodes = 200
 max_env_steps = 100
 
 epsilon = 1.0
